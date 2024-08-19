@@ -19,7 +19,7 @@ export const SymbolsAttachment: React.FC<SymbolsAttachment> = ({symbols}) => {
     <div className="text-xs font-semibold text-slate-500 py-2 flex items-center">
       <NotebookPen className="inline mr-1" size={14}/>
       Symbols viewer
-      <CirclePlus className="inline ml-1" size={14}/>
+      {/*<CirclePlus className="inline ml-1" size={14}/>*/}
     </div>
     <div className="flex font-mono border border-slate-400  rounded-md whitespace-pre-line w-fit  ">
       <div className="w-[240px] flex-grow-0 flex-shrink-0">

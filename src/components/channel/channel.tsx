@@ -12,13 +12,10 @@ const MessageRow = ({message, author}: {
   message: Message,
   author?: Author
 }) => {
-  const m = message;
-  const auth_line = author ? <AuthorLine author={author.name} avatar={author.avatar}/> : null;
-  if (m.author === 'user') {
+  if (message.author === 'user') {
     return (
       <>
-        {auth_line}
-        <RightMessage message={message}/>
+        <RightMessage message={message} author={author}/>
       </>
 
     )
@@ -26,8 +23,7 @@ const MessageRow = ({message, author}: {
 
   return (
     <>
-      {auth_line}
-      <LeftMessage message={message}/>
+      <LeftMessage message={message} author={author}/>
     </>
 
   )
@@ -36,7 +32,9 @@ const MessageRow = ({message, author}: {
 
 export default function Channel() {
   return (
-    <div className="flex flex-col justify-between  px-6 py-6 scroll-auto">
+    <div className="flex flex-col justify-between  px-6 py-6 scroll-auto overflow-auto"
+      style={{height: 'calc(100vh - 48px)'}}
+    >
       {
         MESSAGES.map((m, index) => {
           const showAuthor = m.author !== 'user' && index > 0 && m.author !== MESSAGES[index - 1]?.author;

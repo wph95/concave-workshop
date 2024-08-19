@@ -65,6 +65,7 @@ export const MESSAGES: Message[] = [
     ].join('\n'),
     attachments: [{
       type: "scratch_pad",
+      title: "Problem Description",
       content: [
         "Problem Description:",
         "-   Exception occurs when youtube-dl logs to pytest captured output",
@@ -85,6 +86,7 @@ export const MESSAGES: Message[] = [
     ],
     attachments: [{
       type: "scratch_pad",
+      title: "Keywords [10]",
       content: [
         "Keywords:",
         "[\"_pytest.capture.EncodedFile\",\"write\",\"TypeError\",\"capture\",\"pytest\",\"pytest_capture\",\"SysCapture\",\"capture_fixtures\",\"FDCapture\"]"
@@ -101,6 +103,7 @@ export const MESSAGES: Message[] = [
     ],
     attachments: [{
       type: "scratch_pad",
+      title: "Search Results",
       content: [
         "SysCapture: [2]",
         " - src/_pytest/capture.py",
