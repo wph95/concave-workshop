@@ -1,6 +1,7 @@
 import TiDBIcon from "@/components/channel/tidb_icon";
 import React from "react";
 import {Message} from "@/components/channel/Messages/widgets";
+import {ROOT_SYMBOLS} from "@/components/channel/data";
 
 export const MESSAGES: Message[] = [
   {
@@ -31,7 +32,6 @@ export const MESSAGES: Message[] = [
       },
       {
         title: 'Searching Details',
-        offset: 1,
         content: <>
           load knowledge from <TiDBIcon/> TiDB Cloud
         </>
@@ -99,16 +99,6 @@ export const MESSAGES: Message[] = [
       {title:"", content: <>use tool:<span className="text-orange-500 font-semibold pl-2 font-mono">@concave/full_search.search</span></>},
       {title:"", content: "Get files containing keywords, group by keywords"},
     ],
-    //       "SysCapture": [
-    //         "src/_pytest/capture.py",
-    //         "src/_pytest/pytester.py"
-    //       ],
-    //       "FDCapture": [
-    //         "src/_pytest/capture.py"
-    //       ],
-    //       "capture_fixtures": [
-    //         "src/_pytest/capture.py"
-    //       ]
     attachments: [{
       type: "scratch_pad",
       content: [
@@ -122,5 +112,24 @@ export const MESSAGES: Message[] = [
         "..."
       ].join('\n')
     }]
-  }
+  },
+  {
+    author: 'Peter',
+    content: "I'm analyzing the files to identify related symbols.",
+    hints: [
+      {title: "Searching Details", content: "choose top 10 files"},
+      {title: "Searching Details", content: "evaluate files, choose relevant symbols"},
+      {title: "Searching Details", content: "search relative symbols from Source Files"},
+      {title: "Searching Details", content: "search relative symbols from TiDB Cloud"},
+      {title: "Searching Details", content: "evaluate symbols, choose final results"},
+    ]
+  },
+  {
+    author: 'Peter',
+    content: "I found some symbols that i think are causing the issue.",
+    attachments: [{
+      type: "symbols",
+      symbols: ROOT_SYMBOLS,
+    }]
+  },
 ]

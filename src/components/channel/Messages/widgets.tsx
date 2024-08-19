@@ -51,10 +51,10 @@ export const LeftMessage: MessageFC = ({message: {content, hints, attachments}, 
 }
 export const Hints: FC<{ hits?: Hint[] }> = ({hits}) => {
   if (!hits) return null;
-  return <div className="mb-1">
+  return <div className="mb-1 pl-3 ml-3 border-l-2 border-slate-200">
     {
       hits.map(({title, content, offset}, i) => {
-        return <div key={i} className={cn("flex items-center gap-1", `ml-${(offset ?? 0) * 3}`)}>
+        return <div key={i} className={cn("flex items-center gap-1 hover:bg-slate-300/40 w-full", `ml-${(offset ?? 0) * 3}`)}>
           <div className="flex items-center">
             - {content} <SquareCheckBig size={16} className="ml-2  stroke-green-600"/>
           </div>

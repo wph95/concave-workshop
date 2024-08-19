@@ -1,5 +1,6 @@
 import React from "react";
-import {NotebookPen} from "lucide-react";
+import {CirclePlus, NotebookPen} from "lucide-react";
+import { SymbolsAttachment } from "./symbols_attachment";
 
 export interface UrlAttachment {
   type: "url",
@@ -15,7 +16,9 @@ export interface ScratchPad {
   content: string
 }
 
-export type Attachment = UrlAttachment | ScratchPad
+
+
+export type Attachment = UrlAttachment | ScratchPad | SymbolsAttachment
 
 
 export const Attachments: React.FC<{ attachments?: Attachment[] }> = ({attachments}) => {
@@ -28,6 +31,9 @@ export const Attachments: React.FC<{ attachments?: Attachment[] }> = ({attachmen
       if (attachment.type === "scratch_pad") {
         return <ScratchPadAttachment key={i} {...attachment}/>
       }
+      if (attachment.type === "symbols") {
+        return <SymbolsAttachment key={i} {...attachment}/>
+      }
     })}
   </div>
 }
@@ -37,6 +43,7 @@ export const ScratchPadAttachment: React.FC<ScratchPad> = ({content}) => {
     <div className="text-xs font-semibold text-slate-500 py-2 flex items-center">
       <NotebookPen className="inline mr-1" size={14}/>
       Scratch Pad
+      <CirclePlus className="inline ml-1" size={14}/>
     </div>
     <div className="font-mono border border-slate-400 p-2 rounded-md whitespace-pre-line w-fit min-w-[640px]">
       {content}
