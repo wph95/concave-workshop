@@ -13,16 +13,19 @@ export default function Home() {
         <div className="font-semibold text-2xl">Concave</div>
 
 
-        <div>
+        <div className="relative">
           <Label>Your Teams:</Label>
           <AvatarGroup/>
+          <div className="font-mono absolute right-[180px]  italic text-yellow-600 top-[35px]">
+            {"<- see your teammate!"}
+          </div>
         </div>
 
 
         <div className="flex flex-col relative">
           <Label className="mb-1">In process:</Label>
           <div
-            onClick={()=> {
+            onClick={() => {
               router.push("/workshop/1")
             }}
 
@@ -32,8 +35,8 @@ export default function Home() {
 
           </div>
 
-          <div className="font-mono absolute right-[160px]  italic text-yellow-600 top-[20px]">
-            {"<- click here!"}
+          <div className="font-mono absolute right-[0px]  italic text-yellow-600 top-[20px]">
+            {"<- click to see demo playbook!"}
           </div>
 
         </div>

@@ -1,5 +1,4 @@
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Badge} from "@/components/ui/badge";
+import {Avatar, AvatarImage} from "@/components/ui/avatar";
 import {
   NavigationMenu, NavigationMenuContent,
   NavigationMenuItem,
@@ -7,13 +6,13 @@ import {
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 
-// const avatars = [
-//   "https://api.dicebear.com/7.x/miniavs/svg?seed=1",
-//   "https://api.dicebear.com/7.x/miniavs/svg?seed=2",
-//   "https://api.dicebear.com/7.x/miniavs/svg?seed=3",
-// ]
+export interface Author {
+  name: string,
+  avatar: string
+  description: string
+}
 
-const team = [
+export const TEAM : Author[]= [
   {
     name: "Tom",
     avatar: "https://api.dicebear.com/7.x/miniavs/svg?seed=3",
@@ -29,7 +28,7 @@ export default function AvatarGroup() {
       <NavigationMenu>
         <NavigationMenuList>
           {
-            team.map((u, index) => (
+            TEAM.map((u, index) => (
               <NavigationMenuItem key={u.name}>
                 <NavigationMenuTrigger className="-ml-2 w-8">
                   <Avatar key={index} className="">
