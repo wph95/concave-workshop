@@ -12,7 +12,7 @@ export default function  WorkshopPage() {
         <header className="bg-secondary w-full px-8">
           <div className="h-12 flex items-center justify-between">
             <div className="text-slate-500">
-              Playbook / 1
+              Playbook / PyTest-174
             </div>
 
             <div className="border  border-slate-400 grid grid-cols-2 p-1 px-2 bg-secondary">

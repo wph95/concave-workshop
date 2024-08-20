@@ -123,7 +123,7 @@ export const MESSAGES: Message[] = [
       {title: "Searching Details", content: "choose top 10 files"},
       {title: "Searching Details", content: "evaluate files, choose relevant symbols"},
       {title: "Searching Details", content: "search relative symbols from Source Files"},
-      {title: "Searching Details", content: "search relative symbols from TiDB Cloud"},
+      {title: "Searching Details", content: <>search relative symbols from  <TiDBIcon/> TiDB Cloud</>},
       {title: "Searching Details", content: "evaluate symbols, choose final results"},
     ]
   },
