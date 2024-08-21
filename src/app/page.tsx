@@ -4,15 +4,22 @@ import {Github, Search} from "lucide-react";
 import {useRouter} from "next/navigation";
 import {Input} from "@/components/ui/input";
 
+const Bold = ({children}: { children: React.ReactNode }) => {
+  return <span className="font-semibold">{children}</span>
+}
+const BU = ({children}: { children: React.ReactNode }) => {
+  return <span className=" font-semibold underline underline-offset-4">{children}</span>
+}
 export default function Home() {
   const router = useRouter()
 
   return (<main className="w-full h-full font-mono">
-    <section className="bg-bg relative h-[640px] w-full flex items-center justify-center p-4 md:p-24"
+    <section className=" bg-bg relative h-[640px] w-full flex items-center justify-center p-4 md:p-24"
 
     >
-      <div className="flex flex-col max-w-[960px] relative border-2 border-white h-[400px] mt-[80px] w-full">
-        <div className="absolute text-3xl text-white font-mono px-8 bg-bg"
+      <div
+        className="z-10 flex flex-col max-w-[960px] relative border-2 border-white h-[400px] mt-[80px] w-full dot_shadow bg-bg">
+        <div className="z-20 absolute text-3xl text-white font-mono px-8 bg-bg"
              style={{
                top: "-20px"
              }}
@@ -25,13 +32,13 @@ export default function Home() {
           <a
             href={"https://github.com/concave-ai"}
             target="_blank"
-            className="cursor-pointer flex items-center gap-2 border border-white px-4 text-white py-1.5 rounded-xl text-md">
+            className="z-20 cursor-pointer flex items-center gap-2 border border-white px-4 text-white py-1.5 rounded-xl text-md">
             <Github size={18}/>
             Github
           </a>
         </div>
 
-        <div className="flex-grow flex justify-end items-center p-6 md:p-12">
+        <div className="flex-grow flex justify-end items-center p-6 md:p-12 bg-bg z-10">
           <div className="text-white text-3xl md:text-4xl text-right">
             <p className="mb-1">Open Source, Trusted</p>
             <p>Autonomous Software Engineering</p>
@@ -39,21 +46,25 @@ export default function Home() {
         </div>
 
 
-        <div className="flex gap-4 absolute bottom-8 right-16">
+        <div className="z-10 flex gap-4 absolute bottom-8 right-16">
           <a
             href={"https://github.com/concave-ai"}
             target="_blank">
             <Button className="bg-bg border-white border">Read Doc</Button>
           </a>
-          <Button className="bg-orange-500  hover:bg-orange-600 border border-white"
-                  onClick={() => router.push("/playground")}
-
-          >Playground</Button>
+          <a
+            href={"/playbook"}
+            target="_blank">
+            <Button className="bg-orange-500  hover:bg-orange-600 border border-white">
+              Playground
+            </Button>
+          </a>
         </div>
 
       </div>
 
     </section>
+    <Goal/>
 
     <VIDE_SECTION/>
     <CodeSearch/>
@@ -66,9 +77,9 @@ const bench = `
 ║                                                                                   ║        
 ║  Concave Fleet GPT4o | 78% | 89% | ███████████████████████████████████████▒▒▒▒▒   ║
 ║                                                                                   ║
-║    SWEAgent Calude3  | 21% | 42% | ██████████▒▒▒▒▒▒▒▒▒▒▒                          ║
-║  SWEAgent Calude3.5  | 42% | 47% | █████████████████████▒▒▒                       ║
-║       SWEAgent GPT4o | 36% | 64% | ██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ║
+║   SWEAgent Calude3   | 21% | 42% | ██████████▒▒▒▒▒▒▒▒▒▒▒                          ║
+║   SWEAgent Calude3.5 | 42% | 47% | █████████████████████▒▒▒                       ║
+║   SWEAgent GPT4o     | 36% | 64% | ██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒               ║
 ║                                                                                   ║
 ║   Identify Accuracy  | File | Symbol |                                            ║
 ║                                                                                   ║
@@ -86,7 +97,7 @@ const VIDE_SECTION = () => {
           Concave L·IDE
         </div>
 
-        <div className="text font-semibold underline underline-offset-4">
+        <div className="text italic  underline underline-offset-4">
           World First IDE for LLMs
         </div>
         <div className="mt-6 space-y-1">
@@ -95,7 +106,8 @@ const VIDE_SECTION = () => {
           </div>
 
           <div className="pl-8">
-            - <span className="font-semibold underline underline-offset-4">Hybrid Code Search.</span> help LLMs to understand the codebase.
+            - <span className="font-semibold underline underline-offset-4">Hybrid Code Search.</span> help LLMs to
+            understand the codebase.
           </div>
           <div className="pl-16 font-semibold underline underline-offset-4">
             - Full-Text Search
@@ -133,6 +145,25 @@ const VIDE_SECTION = () => {
     </section>
   )
 }
+const Goal = () => {
+  return (
+    <section className="relative h-full w-full justify-center flex p-4 md:p-8 bg-secondary">
+      <div className="flex flex-col max-w-[960px] relative  py-4  w-full gap-3">
+        <div className="text-2xl ">
+          Goal for concave
+        </div>
+        <div>
+          We are creating <BU>Open-Source</BU>, <BU>Trusted</BU>, and <BU>Fully  Autonomous Software Engineering</BU>.
+          <br/>
+          We design and develop Concave for existing LLMs to lower the barrier to participating in autonomous software
+          engineering.
+        </div>
+      </div>
+
+    </section>
+  )
+}
+
 
 const CodeSearch = () => {
   return (
@@ -146,7 +177,7 @@ const CodeSearch = () => {
         </div>
         <div className="relative flex items-center max-w-2xl ">
           <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-slate-400"/>
-          <Input value="Code related to `EncodedFile`" className=" pl-8" />
+          <Input value="Code related to `EncodedFile`" className=" pl-8"/>
         </div>
       </div>
 
@@ -182,7 +213,8 @@ const Fleet = () => {
           href={"https://github.com/concave-ai/fleet/blob/main/docs/fleet_report.md"}
           target="_blank"
         >
-          <Button className="bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">Read Detail Report</Button>
+          <Button className="bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">Read Full
+            Report</Button>
         </a>
 
       </div>

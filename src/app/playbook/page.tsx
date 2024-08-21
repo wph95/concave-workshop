@@ -26,7 +26,7 @@ export default function Home() {
           <Label className="mb-1">In process:</Label>
           <div
             onClick={() => {
-              router.push("/workshop/1")
+              router.push("/playbook/pytest_174")
             }}
 
             className="cursor-pointer flex items-center gap-3 py-1 px-2 bg-secondary w-fit rounded-xl relative">
