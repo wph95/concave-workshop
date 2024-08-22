@@ -71,6 +71,7 @@ export default function Home() {
     <VIDE_SECTION/>
     <SearchSection/>
     <Fleet/>
+    <div className="h-[320px] w-full" />
   </main>)
 }
 //  █████████▓▒
@@ -94,7 +95,10 @@ const VIDE_SECTION = () => {
   return (
     <section className="relative  w-full flex  justify-center p-4 md:p-8 ">
 
-      <div className="flex flex-col   max-w-[960px] relative border-2 border-white py-16  w-full">
+      <div className="flex flex-col   max-w-[960px] relative border-2 border-white py-4  pb-12 w-full">
+        <div className="border bg-slate-300/30 px-4 py-2 mb-8">
+          Introducing Concave first product
+        </div>
         <div className="text-3xl mb-1">
           Concave L·IDE
         </div>
@@ -121,11 +125,16 @@ const VIDE_SECTION = () => {
             - Git Info. Commit, Issues, and PRs ... [WIP]
           </div>
           <div className="pl-16 font-semibold flex gap-1 items-center	">
-            - Key Search. (<TiDBIcon/> TiDB Serverless)
+            - Symbols Search. (<TiDBIcon/> TiDB Serverless)
           </div>
           <div className="pl-24">
-            - Symbols [Code Intelligence]. methods, class, variables...
-
+            - Faster Pre-Index, [Code Intelligence]
+          </div>
+          <div className="pl-24">
+            - Symbols: methods, class, variables...
+          </div>
+          <div className="pl-24">
+            - Definitions, References, and more...
           </div>
           <div className="pl-16 font-semibold flex items-center	 gap-1">
             - Vector Search. (<TiDBIcon/> TiDB Serverless)
@@ -155,7 +164,7 @@ const Goal = () => {
           Goal for concave
         </div>
         <div>
-          We are creating <BU>Open-Source</BU>, <BU>Trusted</BU>, and <BU>Fully  Autonomous Software Engineering</BU>.
+          We are creating <BU>Open-Source</BU>, <BU>Trusted</BU>, and <BU>Fully Autonomous Software Engineering</BU>.
           <br/>
           We design and develop Concave for existing LLMs to lower the barrier to participating in autonomous software
           engineering.
@@ -167,10 +176,9 @@ const Goal = () => {
 }
 
 
-
 const Fleet = () => {
   return (
-    <section className="relative h-[640px] w-full flex  justify-center p-4 md:p-8 border-b border-slate-700">
+    <section className="relative h-fit w-full flex  justify-center p-4 md:p-8 ">
 
       <div className="flex flex-col   max-w-[960px] relative border-2 border-white py-8  w-full">
         <div className="text-2xl mb-1">
@@ -178,13 +186,14 @@ const Fleet = () => {
         </div>
         <div>
           Experimental, end-to-end issue auto-resolution solution.
-          Based on Concave LIDE + TiDB Serverless.
+          <br/>
+          Based on Concave LIDE + TiDB Serverless. <TiDBIcon/>
           <br/>
           Significantly outperforms existing open-source solutions.
         </div>
 
 
-        <div className="w-full overflow-x-auto mb-2">
+        <div className="w-full overflow-x-auto overflow-y-hidden mb-4">
          <pre className="mt-4">
           {bench}
         </pre>
@@ -199,6 +208,19 @@ const Fleet = () => {
           <Button className="bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">Read Full
             Report</Button>
         </a>
+
+
+        <div className="mt-8 border-l-4 border-l-orange-500 pl-4 bg-orange-100 py-2 rounded">
+          🎁🥚
+          <br />
+          During the development of Concave, we found a bug in the TiDB Vector Python client.
+          <br/>
+          We fixed it using Concave Fleet!
+          <br/>
+          <a  className="text-blue-600" href="https://github.com/pingcap/tidb-vector-python/issues/58" target="_blank">
+            pingcap/tidb-vector-python#58
+          </a>
+        </div>
 
       </div>
     </section>
