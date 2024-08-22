@@ -3,6 +3,8 @@ import {Button} from "@/components/ui/button";
 import {Github, Search} from "lucide-react";
 import {useRouter} from "next/navigation";
 import {Input} from "@/components/ui/input";
+import TiDBIcon from "@/components/channel/tidb_icon";
+import {SearchSection} from "@/components/homepage/search-section";
 
 const Bold = ({children}: { children: React.ReactNode }) => {
   return <span className="font-semibold">{children}</span>
@@ -24,7 +26,7 @@ export default function Home() {
                top: "-20px"
              }}
         >
-          {">_:"} Concave
+          {"$_"} Concave
         </div>
 
 
@@ -67,7 +69,7 @@ export default function Home() {
     <Goal/>
 
     <VIDE_SECTION/>
-    <CodeSearch/>
+    <SearchSection/>
     <Fleet/>
   </main>)
 }
@@ -109,8 +111,8 @@ const VIDE_SECTION = () => {
             - <span className="font-semibold underline underline-offset-4">Hybrid Code Search.</span> help LLMs to
             understand the codebase.
           </div>
-          <div className="pl-16 font-semibold underline underline-offset-4">
-            - Full-Text Search
+          <div className="pl-16 font-semibold ">
+            - Full-Text Search. (Local)
           </div>
           <div className="pl-24 text-sm">
             - Source Code
@@ -118,15 +120,15 @@ const VIDE_SECTION = () => {
           <div className="pl-24 text-sm">
             - Git Info. Commit, Issues, and PRs ... [WIP]
           </div>
-          <div className="pl-16 font-semibold  underline underline-offset-4">
-            - Key Search. local or TiDB Serverless
+          <div className="pl-16 font-semibold flex gap-1 items-center	">
+            - Key Search. (<TiDBIcon/> TiDB Serverless)
           </div>
           <div className="pl-24">
             - Symbols [Code Intelligence]. methods, class, variables...
 
           </div>
-          <div className="pl-16 font-semibold  underline underline-offset-4">
-            - Vector Search. TiDB Serverless
+          <div className="pl-16 font-semibold flex items-center	 gap-1">
+            - Vector Search. (<TiDBIcon/> TiDB Serverless)
           </div>
           <div className="pl-24 text-sm">
             - Symbols Code snippet
@@ -165,25 +167,6 @@ const Goal = () => {
 }
 
 
-const CodeSearch = () => {
-  return (
-    <section className="relative h-full w-full justify-center flex p-4 md:p-8 bg-secondary">
-      <div className="flex flex-col max-w-[960px] relative  py-4  w-full gap-3">
-        <div className="text-2xl font-semibold">
-          L·IDE Hybrid Code Search
-        </div>
-        <div>
-          Design for helping LLMs to understand the codebase.
-        </div>
-        <div className="relative flex items-center max-w-2xl ">
-          <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-slate-400"/>
-          <Input value="Code related to `EncodedFile`" className=" pl-8"/>
-        </div>
-      </div>
-
-    </section>
-  )
-}
 
 const Fleet = () => {
   return (
