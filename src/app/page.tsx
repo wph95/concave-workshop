@@ -201,18 +201,30 @@ const Fleet = () => {
 
         </div>
 
-        <a
-          href={"https://github.com/concave-ai/fleet/blob/main/docs/fleet_report.md"}
-          target="_blank"
-        >
-          <Button className="bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">Read Full
-            Report</Button>
-        </a>
+        <div className="flex gap-4">
+          <a
+            href={"/playbook"}
+            target="_blank">
+            <Button variant="outline" className="border border-black">
+              Fleet Playground
+            </Button>
+          </a>
+
+          <a
+            href={"https://github.com/concave-ai/fleet/blob/main/docs/fleet_report.md"}
+            target="_blank"
+          >
+            <Button className="bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">Read Full
+              Report</Button>
+          </a>
+
+
+        </div>
 
 
         <div className="mt-8 border-l-4 border-l-orange-500 pl-4 bg-orange-100 py-2 rounded">
           🎁🥚
-          <br />
+          <br/>
           During the development of Concave, we found a bug in the TiDB Vector Python client.
           <br/>
           We fixed it using Concave Fleet!
