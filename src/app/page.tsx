@@ -50,7 +50,7 @@ export default function Home() {
 
         <div className="z-10 flex gap-4 absolute bottom-8 right-16">
           <a
-            href={"https://github.com/concave-ai"}
+            href={"https://concave-docs.vercel.app"}
             target="_blank">
             <Button className="bg-bg border-white border">Read Doc</Button>
           </a>
