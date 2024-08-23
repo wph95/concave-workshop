@@ -137,10 +137,10 @@ const VIDE_SECTION = () => {
             - Definitions, References, and more...
           </div>
           <div className="pl-16 font-semibold flex items-center	 gap-1">
-            - Vector Search. (<TiDBIcon/> TiDB Serverless)
+            - Semantic Search. (<TiDBIcon/> TiDB Vector Search)
           </div>
           <div className="pl-24 text-sm">
-            - Symbols Code snippet
+            - Symbols, Code snippet
           </div>
           <div className="pl-24 text-sm">
             - Documents
