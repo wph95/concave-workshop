@@ -229,10 +229,18 @@ const Fleet = () => {
           <br/>
           We fixed it using Concave Fleet!
           <br/>
-          <a  className="text-blue-600" href="https://github.com/pingcap/tidb-vector-python/issues/58" target="_blank">
+          <a className="text-blue-600" href="https://github.com/pingcap/tidb-vector-python/issues/58" target="_blank">
             pingcap/tidb-vector-python#58
           </a>
         </div>
+
+        <a
+          href={"/playbook/tidb_python"}
+          target="_blank">
+          <Button className="mt-4 bg-orange-500  hover:bg-orange-600 border border-slate-700 w-fit">
+            See How Fleet Fix TiDB Vector Issue
+          </Button>
+        </a>
 
       </div>
     </section>

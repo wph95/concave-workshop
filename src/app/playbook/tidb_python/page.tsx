@@ -3,7 +3,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import Channel from "@/components/channel/channel";
 import {useAtom} from "jotai";
 import {ChannelMode} from "@/components/channel/model";
-import {MESSAGES} from "@/components/channel/messages";
+import {TIDB_MESSAGES} from "@/components/channel/messages";
 
 export default function  WorkshopPage() {
   const [mode, setMode] = useAtom(ChannelMode)
@@ -13,7 +13,7 @@ export default function  WorkshopPage() {
         <header className="bg-secondary w-full px-8">
           <div className="h-12 flex items-center justify-between">
             <div className="text-slate-500">
-              Playbook / PyTest-174
+              Playbook / TiDB-Vector-Python#58
             </div>
 
             <div className="border  border-slate-400 grid grid-cols-2 p-1 px-2 bg-secondary">
@@ -47,7 +47,7 @@ export default function  WorkshopPage() {
         </header>
 
         <TabsContent value="channel">
-          <Channel  play full_messages={MESSAGES}/>
+          <Channel full_messages={TIDB_MESSAGES}  />
         </TabsContent>
         <TabsContent value="knownledge">Change your password here.</TabsContent>
 

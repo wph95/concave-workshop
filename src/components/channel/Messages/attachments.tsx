@@ -4,6 +4,7 @@ import {SymbolsAttachment} from "./symbols_attachment";
 import {cn} from "@/lib/utils";
 import {useAtomValue} from "jotai/index";
 import {ChannelMode} from "@/components/channel/model";
+import {PatchAttachment} from "@/components/channel/Messages/patch";
 
 export interface UrlAttachment {
   type: "url",
@@ -21,7 +22,7 @@ export interface ScratchPad {
 }
 
 
-export type Attachment = UrlAttachment | ScratchPad | SymbolsAttachment
+export type Attachment = UrlAttachment | ScratchPad | SymbolsAttachment | PatchAttachment
 
 
 export const Attachments: React.FC<{ attachments?: Attachment[] }> = ({attachments}) => {
@@ -36,6 +37,9 @@ export const Attachments: React.FC<{ attachments?: Attachment[] }> = ({attachmen
       }
       if (attachment.type === "symbols") {
         return <SymbolsAttachment key={i} {...attachment}/>
+      }
+      if (attachment.type === "patch") {
+        return <PatchAttachment key={i} {...attachment}/>
       }
     })}
   </div>

@@ -30,8 +30,19 @@ export default function Home() {
             }}
 
             className="cursor-pointer flex items-center gap-3 py-1 px-2 bg-secondary w-fit rounded-xl relative">
+            <div className="h-2 w-2 rounded-full bg-yellow-500 ml-2"></div>
+           Wait review pytest/pytest#5257
+
+          </div>
+
+          <div
+            onClick={() => {
+              router.push("/playbook/tidb_python")
+            }}
+
+            className="mt-2 cursor-pointer flex items-center gap-3 py-1 px-2 bg-secondary w-fit rounded-xl relative">
             <div className="h-2 w-2 rounded-full bg-green-500 ml-2"></div>
-            Prepare PR to fix pytest/pytest#5257
+            Fixed TiDB-Vector-Python#58 ✅
 
           </div>
 

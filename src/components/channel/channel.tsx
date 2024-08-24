@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useEffect, useRef} from "react";
-import {AuthorLine, LeftMessage, Message, RightMessage} from "@/components/channel/Messages/widgets";
+import {LeftMessage, Message, RightMessage} from "@/components/channel/Messages/widgets";
 import {Author, TEAM} from "@/components/avatar-group/avatar-group";
 import {MESSAGES} from "@/components/channel/messages";
 
@@ -28,17 +28,27 @@ const MessageRow = ({message, author}: {
 }
 
 
-export default function Channel() {
+export default function Channel({
+                                  play,
+                                  full_messages
+                                }: {
+  play?: boolean
+  full_messages: Message[]
+}) {
   const ref = useRef<HTMLDivElement | null>(null)
 
-  const [messages, setMessages] = React.useState<Message[]>([MESSAGES[0]])
+  const [messages, setMessages] = React.useState<Message[]>([full_messages[0]])
   useEffect(() => {
-    for (let i = 1; i < MESSAGES.length; i++) {
-      setTimeout(() => {
-        setMessages(prev => [...prev, MESSAGES[i]])
-      }, i * 2000)
+    if (play) {
+      for (let i = 1; i < full_messages.length; i++) {
+        setTimeout(() => {
+          setMessages(prev => [...prev, full_messages[i]])
+        }, i * 1000)
+      }
+    } else {
+      setMessages(full_messages)
     }
-  }, [])
+  }, [full_messages, play])
 
   useEffect(() => {
     if (ref.current) {
