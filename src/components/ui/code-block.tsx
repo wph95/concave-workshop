@@ -27,7 +27,7 @@ const LineContent = ({children, lines, offset}: { offset: number, children: Reac
 export default function CodeBlock({code, language, words, offset=0, lines}: {
   code: string,
   language: string
-  offset: number
+  offset?: number
   lines?: number[]
   words?: string[]
 }) {
