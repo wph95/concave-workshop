@@ -20,7 +20,7 @@
     "clsx": "^2.1.1",
     "jotai": "^2.9.3",
     "lucide-react": "^0.428.0",
-    "next": "14.2.5",
+    "next": "14.2.35",
     "prism-react-renderer": "^2.3.1",
     "react": "^18",
     "react-code-block": "^1.0.0",
